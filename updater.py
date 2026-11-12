@@ -13,9 +13,7 @@ import paths
 
 from __init__ import SKIP_UPDATES, VERSION
 from core.utils import restart
-
-
-REPO = "leizov/Seal-Playerok-Bot"
+REPO = "uidf1/play"
 logger = getLogger("seal.updater")
 
 
