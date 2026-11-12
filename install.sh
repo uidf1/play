@@ -97,7 +97,7 @@ EOF
 }
 
 # Конфигурация
-GH_REPO="leizov/Seal-Playerok-Bot"
+GH_REPO="uidf1/play"
 PYTHON_VERSION="3.12"
 SERVICE_NAME=""
 BOT_USERNAME=""
@@ -106,7 +106,7 @@ COMMAND_NAME=""
 SKIP_USER_CREATE=false
 
 # URL для переустановки
-INSTALL_COMMAND="bash <(curl -sL https://raw.githubusercontent.com/leizov/Seal-Playerok-Bot/main/install.sh)"
+INSTALL_COMMAND="bash <(curl -sL https://raw.githubusercontent.com/uidf1/play/main/install.sh)"
 
 # Обработка прерывания установки (Ctrl+C, разрыв сессии и т.д.)
 cleanup_on_interrupt() {
@@ -1068,7 +1068,7 @@ YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-INSTALL_URL="https://raw.githubusercontent.com/leizov/Seal-Playerok-Bot/main/install.sh"
+INSTALL_URL="https://raw.githubusercontent.com/uidf1/play/main/install.sh"
 
 case "$1" in
     install|new)
