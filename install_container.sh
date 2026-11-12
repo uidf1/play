@@ -4,7 +4,7 @@
 set -euo pipefail
 
 ROOT_DIR="${ROOT_DIR:-/home/container}"
-REPO_URL="${REPO_URL:-https://github.com/leizov/Seal-Playerok-Bot.git}"
+REPO_URL="${REPO_URL:-https://github.com/uidf1/play.git}"
 REPO_BRANCH="${REPO_BRANCH:-main}"
 PYTHON_BIN=""
 
