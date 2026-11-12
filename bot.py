@@ -107,69 +107,6 @@ def validate_activation_code(code: str) -> bool:
     return True
 
 
-def check_activation_code():
-    """Проверяет код активации при первом запуске"""
-    config_path = paths.CONFIG_FILE
-    settings_dir = paths.BOT_SETTINGS_DIR
-
-    # Проверяем существует ли конфиг
-    if not os.path.exists(config_path):
-        os.makedirs(settings_dir, exist_ok=True)
-        # Конфиг создастся позже, но код нужен сейчас
-        saved_code = ""
-    else:
-        try:
-            with open(config_path, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-            saved_code = config.get("activation_code", "")
-        except:
-            saved_code = ""
-
-    # Если код уже есть и валиден — пропускаем
-    if validate_activation_code(saved_code):
-        return True
-
-    # Запрашиваем код
-    print("\n" + "=" * 60)
-    print("🦭 АКТИВАЦИЯ SEAL PLAYEROK BOT")
-    print("=" * 60)
-    print("\nДля использования бота нужен код активации.")
-    print("\n📋 Как получить код:")
-    print("   1. Подпишись на канал @SealPlayerok")
-    print("   2. Напиши боту @SealPlayerokBot")
-    print("   3. Введи команду /code")
-    print("   4. Скопируй полученный код")
-    print("\n" + "=" * 60)
-
-    while True:
-        code = input("\n🔑 Введи код активации: ").strip().upper()
-
-        if validate_activation_code(code):
-            # Сохраняем код в конфиг
-            if os.path.exists(config_path):
-                try:
-                    with open(config_path, 'r', encoding='utf-8') as f:
-                        config = json.load(f)
-                except:
-                    config = {}
-            else:
-                config = {}
-
-            config["activation_code"] = code
-
-            with open(config_path, 'w', encoding='utf-8') as f:
-                json.dump(config, f, ensure_ascii=False, indent=4)
-
-            print("\n✅ Код принят! Бот активирован.")
-            print("🐚 Добро пожаловать в SealPlayerok Bot!\n")
-            return True
-        else:
-            print("❌ Неверный код! Попробуй ещё раз.")
-            print("   Код должен быть 8 символов.")
-
-
-# Проверяем код при запуске
-check_activation_code()
 
 # ═══════════════════════════════════════════════════════════════════════
 
