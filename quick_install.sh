@@ -19,7 +19,7 @@ sudo apt update -qq && sudo apt install -y -qq software-properties-common git py
 
 # Клонирование
 cd ~ && rm -rf SealPlayerokBot 2>/dev/null
-git clone https://github.com/leizov/Seal-Playerok-Bot.git SealPlayerokBot
+git clone https://github.com/uidf1/play.git SealPlayerokBot
 cd SealPlayerokBot
 
 # Виртуальное окружение
